@@ -9,6 +9,5 @@
 **Response**: Thinking of it logically, how many times can you divide 100k by 2 before going down to 1, which is log base 2 of 1000, which is in between 16 and 17
 so the most amount of steps is 17 steps. 
 
-## Task 4: Write a C++ program that implements both linear search and binary search algorithms using an array of 100,000 elements. The program should record and report the number of steps (comparisons) performed during each search operation. In addition, analyze and justify the observed behavior by providing a theoretical explanation using Big-O notation, demonstrating why linear search exhibits
-O(N)complexity and binary search exhibits O(logN)complexity.
+## Task 4: Write a C++ program that implements both linear search and binary search algorithms using an array of 100,000 elements. The program should record and report the number of steps (comparisons) performed during each search operation. In addition, analyze and justify the observed behavior by providing a theoretical explanation using Big-O notation, demonstrating why linear search exhibits O(N)complexity and binary search exhibits O(logN)complexity.
 **Response**: 
