@@ -77,7 +77,58 @@ Return not found
 Analysis: Best case O(1), if the first random index contains the value of interest. The average case will be roughly linear O(N), meaning you will find the key after checking about n/2 elements(n=size). However, as you check more you are going to get more repeats, and will have to take more steps to skip them. The worst case scenario is O(n^2), because with each additional element you check, it increases the chance of getting repeats. If you have checked n-1 elements, every element besides the last one will be a repeat.  
 Code: 
 ```C++
-insert code
+#include <iostream>
+#include <vector>
+#include <random>
+using namespace std;
+
+//pseudo code: Create boolean array 'visited' of size n, all false
+//While not all indices visited:
+    //Generate random index
+   // If index already visited:
+      //  Continue to next iteration
+   // Mark index as visited
+   // If element at index equals key:
+    //    Return found
+
+int main() {
+    const int SIZE=100000;
+    vector<int> data(SIZE);
+    random_device rd;
+    mt19937 gen(rd());
+    uniform_int_distribution<> dist(0, SIZE - 1);
+
+    int key = dist(gen); // Random key between 0 and 99999
+
+    cout << "Searching for key: " << key << endl;
+
+    for (int i=0;i<SIZE;i++) {//in this case we are filling with distinct values(not random)
+        data[i]=i;//the data order doesnt matter for testing our algorithm
+    }
+    bool visited[SIZE]={false};//creates bool array 'visited', every element stasrts as false
+    int checkedcount=0;
+    int repeats=0;
+    
+
+    while (checkedcount<SIZE) {
+        int randomIndex=dist(gen);//generate random index
+
+        if (visited[randomIndex]) {//if the index has already been checked add to repeat counter
+            repeats++;
+            continue;//already visited try again
+        }//only gets past here if its a new value
+visited[randomIndex]=true;//set the random index to true in the visited boolean array
+        checkedcount++;//add to the count of checked indices 
+        
+        if (data[randomIndex]==key) {//if thats the number of interest print the info
+            cout<<"Key found at index: "<<randomIndex<<endl;
+            cout<<"total amount of operations: "<< checkedcount+repeats <<endl;
+            return 0;
+        }
+
+    }
+}
+
 ```
 
 Compare and contrast: 
