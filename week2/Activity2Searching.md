@@ -1,4 +1,4 @@
-# Activity 2: Searching
+or# Activity 2: Searching
 ## Task 1: How many steps would it take to perform a linear search for the number 8 in the ordered array, [2, 4, 6, 8, 10, 12, 13]? 
 **Response**: Linear search checks elements one by one from the start so in this case it would take 4 steps. 
 
@@ -65,8 +65,9 @@ const int SIZE =100000;//How big the array is going to be
 }
 ```
 ## Task 5: Write pseudocode for a randomized search algorithm that searches for a given key by randomly selecting indices without repetition. Use a dataset of 100,000 distinct elements, stored in a vector. Each element may be examined at most once during the search. Analyze and state the best-case, average-case, and worst-case time complexities of this algorithm using Big-O notation. Then, implement the algorithm in C++, using only the following standard headers: <vector> for data storage, <random> for random index generation, and <iostream> for input and output. The implementation should track and report the number of comparisons performed during the search. Finally, compare and contrast the randomized search algorithm with linear search and binary search in terms of time complexity, data requirements (such as ordering), and practical efficiency. Discuss scenarios in which each approach may be preferred, highlighting the advantages and limitations of randomized search relative to linear and binary search.
-**Response**: Pseudocode/logic: Fill an array with 100k elements
-Create boolean array 'visited' of size n, all false
+**Response**: Pseudocode/logic: Fill a vector array with 100k elements.
+Create boolean array 'visited'.
+of size n, all false.
 While not all indices visited:
     Generate random index
     If index already visited:
