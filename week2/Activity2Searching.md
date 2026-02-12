@@ -86,15 +86,6 @@ Code:
 #include <random>
 using namespace std;
 
-//pseudo code: Create boolean array 'visited' of size n, all false
-//While not all indices visited:
-    //Generate random index
-   // If index already visited:
-      //  Continue to next iteration
-   // Mark index as visited
-   // If element at index equals key:
-    //    Return found
-
 int main() {
     const int SIZE=100000;
     vector<int> data(SIZE);
