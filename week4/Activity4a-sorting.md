@@ -21,6 +21,18 @@ function containsX(string) {
 } 
 ```
 ### (a) What is this function’s time complexity regarding Big O Notation? 
-***Response***: The time complexity is O(N) because it loops through every letter once.
+**Response**: The time complexity is O(N) because it loops through every letter once.
 ### (b) Then, modify the code to improve the algorithm’s efficiency for best- and average-case scenarios.
-***Response***: I changed the code so that it stops searching when the X is found. This makes the best case O(1), and the average case will be twice as fast, which is still O(N).
+**Response**: I changed the code so that it stops searching when the X is found. This makes the best case O(1), and the average case will be twice as fast, which is still O(N).
+```Javascript
+function containsX(string) {
+    for(let i = 0; i < string.length; i++) { 
+        if (string[i] === "X") {
+            return true; 
+        }
+    }
+    return false; 
+}
+```
+## Task 4: Video
+**Response**: 
