@@ -1,6 +1,9 @@
 # Activity 4a: sorting
 ## Task 1: Proof that, under the average-case scenario, the insertion sort has a time complexity of O(N^2) Draw a clear figure and show all the operations clearly. 
-**Response**
+**Response**: For the average case scenario, assume that at iteration i, the inner loop performs about i/2 swaps.This is because in a random array, the element at index i is equally likley to belong in any of the i+1 positions, so on average it moves i/2 steps. The outer loop will run N-1 times because by the time index N-1 is reached the array will be fully sorted. If the average amount of swaps in the inner loop was i, the total amount of swaps would be (N^2-N)/2, but because the amount of inner loop swaps for this average case is i/2, the total amount of swaps becomes (N^2-N)/4. Because the dominant term is N^2 that makes the average-case time complexity of the swap-based insertion sort O(N^2).
+drawing: https://drive.google.com/file/d/1LYs4M2amyaFBXskV5dND3PNPQQUIwiw-/view?usp=share_link or try this: 
+[IMG_4895.pdf](https://github.com/user-attachments/files/25528343/IMG_4895.pdf)
+
 
 ## Task 2: At the start of the insertion sort, the index of the inspected value is set to 1. Change the index of the inspected value and verify that the total number of operations equals 20. Consider the worst-case scenario. Use N=5, where N is the number of elements.
 **Response**
