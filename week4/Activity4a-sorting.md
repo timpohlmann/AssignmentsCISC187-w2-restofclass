@@ -6,7 +6,7 @@ drawing: https://drive.google.com/file/d/1LYs4M2amyaFBXskV5dND3PNPQQUIwiw-/view?
 
 
 ## Task 2: At the start of the insertion sort, the index of the inspected value is set to 1. Change the index of the inspected value and verify that the total number of operations equals 20. Consider the worst-case scenario. Use N=5, where N is the number of elements.
-**Response**: When starting at index 1 the total number of operations is 20(swaps+comparisons). In the worst case scenario when n=5 the beginning array is as follows. [5,4,3,2,1] Starting at index one is one comparison and one swap, index 2 is 2 comparisons and 2 swaps, index 3 is 3 comparisons and 3 swaps, and index 4 has 4 comparisons and 4 swaps. So the total amount of operations is 2(1)+2(2)+2(3)+2(4)=20
+**Response**: When starting at index 1 the total number of operations is 20(swaps+comparisons). In the worst case scenario when n=5 the beginning array is as follows. [5,4,3,2,1] In this case each index i will require i comparisions and i swaps.Starting at index one is one comparison and one swap, index 2 is 2 comparisons and 2 swaps, index 3 is 3 comparisons and 3 swaps, and index 4 has 4 comparisons and 4 swaps. So the total amount of operations is 2(1)+2(2)+2(3)+2(4)=20
 
 ## Task 3: The following function returns whether or not a capital “X” is present within a string. 
 ```Javascript
