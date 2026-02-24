@@ -20,4 +20,7 @@ function containsX(string) {
 	return foundX; 
 } 
 ```
-### (a) What is this function’s time complexity regarding Big O Notation? (b) Then, modify the code to improve the algorithm’s efficiency for best- and average-case scenarios.
+### (a) What is this function’s time complexity regarding Big O Notation? 
+***Response***: The time complexity is O(N) because it loops through every letter once.
+### (b) Then, modify the code to improve the algorithm’s efficiency for best- and average-case scenarios.
+***Response***: I changed the code so that it stops searching when the X is found. This makes the best case O(1), and the average case will be twice as fast, which is still O(N).
