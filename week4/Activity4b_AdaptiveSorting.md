@@ -83,7 +83,7 @@ cout<<"Method picked: insertion sort"<<endl<<"Sorted array: ";//Call insertion s
 
 ```
 ### Part B:
-# Tasks: Using the same threshold defined in Part A:The user will input 50 integers. Without actually sorting the array, your program must analyze the order of elements.The program should classify the input as:Average Case or Worst Case. The program must then display the classification result.
+# Tasks: Using the same threshold defined in Part A:The user will input 50 integers. Without actually sorting the array, your program must analyze the order of elements. The program should classify the input as: Average Case or Worst Case. The program must then display the classification result.
 **Response**: Following the logic from part A, an array with 625 or more inversions will be worst case, and anything less than 625 will be average case. 
 ```C++
 #include <iostream>
@@ -147,5 +147,4 @@ cout<<"Average case"<<endl;
 ```
 ### Part C:
 # Tasks: Give the threshold definiton to differentiate between cases and why. Why your program picks one sorting algorithm over another in specific scenarios. A brief discussion on how input order affects time complexity of selection sort and insertion sort.
-**Response**: My threshold is based off inversions, which I am defining as a pair of any 2 elements that are in the wrong order relative to a sorted array. Selection sort always does (N^2)/2 comparison, where as Insertion sorts comparisons are directly related to the number of inversions(comparisons). Since the maximum amount of inversions is (N^2)/2 (fully reversed array), the average is (N^2)/4. Below this average insertion sort is faster, and above it, selection sort is faster. In this case that threshold (N^2)/4=625. 
-Insertion sort is heavily dependent on input order, when the array is nearly sorted and requires few swaps, it runs close to O(N). Selection sort always runs at O(N^2), regardless of the amount of swaps needed. Both algorithms reach O(N^2) at worst case, but selection sort is better in this case because it doesnt perform a swap for every comparison like insertion sort. 
+**Response**: My threshold is based off inversions, which I am defining as a pair of any 2 elements that are in the wrong order relative to a sorted array. Selection sort always does (N^2)/2 comparison, where as Insertion sorts comparisons are directly related to the number of inversions(comparisons). Since the maximum amount of inversions is (N^2)/2 (fully reversed array), the average is (N^2)/4. Below this average insertion sort is faster, and above it, selection sort is faster. In this case that threshold is (N^2)/4=625. Insertion sort is heavily dependent on input order. When the array is nearly sorted and requires few swaps, it runs close to O(N). Selection sort always runs at O(N^2), regardless of the amount of swaps needed. Both algorithms reach O(N^2) at worst case, but selection sort is better in this case because it doesnt perform a swap for every comparison like insertion sort. 
