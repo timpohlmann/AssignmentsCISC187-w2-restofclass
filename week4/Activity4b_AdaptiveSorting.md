@@ -1,6 +1,6 @@
 ### Part A:
 # Tasks: Create an array of 50 integers. determine if the case is best worst or average based off a clearly defined threshold. Based on the analysis the program should automatically determine selection sort or insertion sort
-**Response**: My threshold is based off inversions, which I am defining as a pair of any 2 elements that are in the wrong order relative to a sorted array. Selection sort always does (N^2)/2 comparison, where as Insertion sorts comparisons are directly related to the number of inversions(comparisons). (N^2)/4 is roughly the point of average inversions, meaning below it insertion sort is faster, and above it, selection sort is faster. In this case that threshold (N^2)/4=625.
+**Response**: My threshold is based off inversions, which I am defining as a pair of any 2 elements that are in the wrong order relative to a sorted array. Selection sort always does (N^2)/2 comparison, where as Insertion sorts comparisons are directly related to the number of inversions(comparisons). Since the maximum amount of inversions is (N^2)/2 (fully reversed array), the average is (N^2)/4. Below this average insertion sort is faster, and above it, selection sort is faster. In this case that threshold (N^2)/4=625.
 ```C++
 #include <iostream>
 using namespace std;
