@@ -82,3 +82,5 @@ cout<<"Method picked: insertion sort"<<endl<<"Sorted array: ";//Call insertion s
 }
 
 ```
+### Part B:
+# Tasks: Using the same threshold defined in Part A:The user will input 50 integers. Without actually sorting the array, your program must analyze the order of elements.The program should classify the input as:Average CaseWorst Case. The program must then display the classification result.
