@@ -69,7 +69,7 @@ cout<<"Array before sorting: "<<endl;
     
 int invcount=inversions(array,50);
 cout<<"Number of inversions: "<<invcount<<endl;
-    if (invcount <625) {//calling inversions function to see how 'disordered' the array is
+    if (invcount <625) {//checking inversions to see the amount of disorder, the threshold number is 625
 cout<<"Method picked: insertion sort"<<endl<<"Sorted array: ";//Call insertion sort function and print the array
         insertionSort(array, 50);
         printArray(array, 50);
@@ -137,7 +137,7 @@ cout<<"Array before sorting: "<<endl;
     int invcount = inversions(array, size);
 
 cout<<"Number of inversions: "<<invcount<<endl;
-    if (invcount <625) {//calling inversions function to see how 'disordered' the array is
+    if (invcount <625) {//checking inversions to see disorder
 cout<<"Average case"<<endl;
     }
     else {
