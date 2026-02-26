@@ -35,4 +35,5 @@ function containsX(string) {
 }
 ```
 ## Task 4: Video
-**Response**: 
+**Response**: https://sdccd.us-west-2.instructuremedia.com/embed/0d073941-b665-40f8-bf7b-7f680a80ff63
+
