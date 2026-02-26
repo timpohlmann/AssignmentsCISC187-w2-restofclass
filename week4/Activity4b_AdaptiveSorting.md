@@ -66,10 +66,10 @@ int main() {
 
 cout<<"Array before sorting: "<<endl;
     printArray(array, size);//printing original array so user can gauge disorder
-    '\n';
-
-cout<<"Number of inversions: "<<inversions(array, size)<<endl;
-    if (inversions(array,50) <625) {//calling inversions function to see how 'disordered' the array is
+    
+int invcount=inversions(array,50);
+cout<<"Number of inversions: "<<invcount<<endl;
+    if (invcount <625) {//calling inversions function to see how 'disordered' the array is
 cout<<"Method picked: insertion sort"<<endl<<"Sorted array: ";//Call insertion sort function and print the array
         insertionSort(array, 50);
         printArray(array, 50);
@@ -84,3 +84,68 @@ cout<<"Method picked: insertion sort"<<endl<<"Sorted array: ";//Call insertion s
 ```
 ### Part B:
 # Tasks: Using the same threshold defined in Part A:The user will input 50 integers. Without actually sorting the array, your program must analyze the order of elements.The program should classify the input as:Average CaseWorst Case. The program must then display the classification result.
+**Response**: Following the logic from part A, an array with 625 or more inversions will be worst case, and anything less than 625 will be average case. 
+```C++
+#include <iostream>
+using namespace std;
+
+int inversions(int arr[],int size) {
+    //is when a pair of any pair (i, j) where i < j but array[i] > array[j]
+    int count = 0;
+   //for each element in the array we are looking for the values to the right of it that are smaller
+    for (int i=0;i<size;i++) {
+        for (int j=i+1;j<size;j++) {
+            if (arr[i]>arr[j])
+                count++;
+        }
+    }
+    return count;//number of inversions
+}
+
+
+
+void printArray(int arr[], int size) {//simple function to print elements of an array
+    for (int i = 0; i < size; i++) {
+        cout << arr[i] << " ";
+    }
+    cout << endl;
+}
+int main() {
+    int size=50;
+    int array[50];
+
+    for (int i = 0; i < 50; i++) {//outer for loop for user inputted array
+        int num, duplicate;//declaring variables
+
+        do {//begining of do-while
+            duplicate = 0;//set duplicate count to 0
+            cout << "Enter integer " << i + 1 << ": ";//promt user input
+            cin >> num;
+
+            for (int j = 0; j < i; j++) {//inner for loop, checks each value already in array
+                if (array[j] == num) {//compares user input to value in array
+                    duplicate = 1;
+                    cout << "Duplicate! Try again." << endl;
+                    break;//stops for loop if there is a duplicate
+                }
+            }
+        } while (duplicate);//if duplicate stays at 0, it exits loop, and stores user inputted value into array
+        array[i] = num;
+    }
+
+
+
+
+cout<<"Array before sorting: "<<endl;
+    printArray(array, size);//printing original array so user can gauge disorder
+    int invcount = inversions(array, size);
+
+cout<<"Number of inversions: "<<invcount<<endl;
+    if (invcount <625) {//calling inversions function to see how 'disordered' the array is
+cout<<"Average case"<<endl;
+    }
+    else {
+        cout<<"Worst case"<<endl;
+    }
+}
+```
