@@ -1,12 +1,12 @@
 ### Part A:
-# Tasks: Create an array of 50 integers. determine if the case is best worst or average based off a clearly defined threshold. Based on the analysis the program should automatically determine selection sort or insertion sort
+# Tasks: Create an array of 50 integers. determine if the case is best, worst, or average based off a clearly defined threshold. Based on the analysis the program should automatically determine selection sort or insertion sort
 **Response**: 
 ```C++
 #include <iostream>
 using namespace std;
 
 int inversions(int arr[],int size) {
-    //is when a pair of any pair (i, j) where i < j but array[i] > array[j]
+    //is when a pair of any indices (i, j) where i < j but array[i] > array[j]
     int count = 0;
    //for each element in the array we are looking for the values to the right of it that are smaller
     for (int i=0;i<size;i++) {
