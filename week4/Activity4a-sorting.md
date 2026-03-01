@@ -5,8 +5,12 @@ drawing: https://drive.google.com/file/d/1LYs4M2amyaFBXskV5dND3PNPQQUIwiw-/view?
 [IMG_4895.pdf](https://github.com/user-attachments/files/25528343/IMG_4895.pdf)
 
 
-## Task 2: At the start of the insertion sort, the index of the inspected value is set to 1. Change the index of the inspected value and verify that the total number of operations equals 20. Consider the worst-case scenario. Use N=5, where N is the number of elements.
-**Response**: When starting at index 1 the total number of operations is 20(swaps+comparisons). For N=5 the worst case scenario array is as follows:[5,4,3,2,1]. For each index i, i comparisions and i swaps are required .Starting at index one: one comparison and one swap, index 2 requires 2 comparisons and 2 swaps, index 3 requires 3 comparisons and 3 swaps, and index 4 requires 4 comparisons and 4 swaps. So the total amount of operations is 2(1)+2(2)+2(3)+2(4)=20
+## Task 2: Insertion sort normally begins with i = 1 (0-based indexing). Let N = 5 and assume the array is in descending order (worst case).Count operations where:a comparison is A[j] > key a shift is A[j+1] = A[j]. a) Start the algorithm at i = 1. Verify the total operations = 20.b) Start the algorithm at i = 2, then i = 3. Count operations again. c) For (b), does the algorithm still sort the entire array? Explain.
+
+**Response**: a. When starting at index 1 the total number of operations is 20(swaps+comparisons). For N=5 the worst case scenario array is as follows:[5,4,3,2,1]. For each index i, i comparisions and i swaps are required .Starting at index one: one comparison and one swap, index 2 requires 2 comparisons and 2 swaps, index 3 requires 3 comparisons and 3 swaps, and index 4 requires 4 comparisons and 4 swaps. So the total amount of operations is 2(1)+2(2)+2(3)+2(4)=20
+**Response**: b. Starting at i=2 or i=3  gives comparisons and shift both equal to i for each remaining index until N-1. So starting at i=2 gives 2(2)+2(3)+2(4)=18 total operations. Starting at i=3 gives 2(3)+2(4)=14 total operations.
+**Response**: c. No, when you start at i=2 the element in the 0th index is still unsorted, and when you start at i=3 the elements in the 0th and 1st indices are unsorted.
+
 
 ## Task 3: The following function returns whether or not a capital “X” is present within a string. 
 ```Javascript
@@ -35,5 +39,5 @@ function containsX(string) {
 }
 ```
 ## Task 4: Video
-**Response**: https://sdccd.us-west-2.instructuremedia.com/embed/0d073941-b665-40f8-bf7b-7f680a80ff63
+**Response**: 
 
