@@ -113,16 +113,6 @@ public:
 
     bool isEmpty() const { return currentSize == 0; }//returns true if empty
 
-    // Print every bucket and what's in it
-    void printTable() const {
-        for (int i = 0; i < capacity; i++) {
-            cout << "Bucket[" << i << "]: ";//so for each bucket(the amount of buckets is equal to the capacity)
-            for (const auto& pair : table[i]) {//for each bucket print the key and value for each pair
-                cout << "(" << pair.first << ", " << pair.second << ") ";
-            }
-            cout << "\n";
-        }
-    }
 
    //these functions will make analysis clearer
     int getCollisionCount() const { return collisionCount; }
