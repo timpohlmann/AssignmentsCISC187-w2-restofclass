@@ -165,7 +165,7 @@ void printStats(const string& label, HashTable& ht) {//parameters
 void testRandomWords() {
     HashTable ht;
 
-    vector<string> words = {
+    vector<string> words = {//these 'random' words were ai generated to save time
         "apple","banana","cherry","date","elderberry","fig","grape","honeydew",
         "kiwi","lemon","mango","nectarine","orange","papaya","quince","raspberry",
         "strawberry","tangerine","ugli","vanilla","watermelon","xigua","yam","zucchini",
@@ -181,7 +181,7 @@ void testRandomWords() {
         "cotton","silk","linen","wool","polyester","nylon","denim","velvet",
         "satin","chiffon","tweed","flannel","corduroy","muslin","organza",
         "poplin","rayon","spandex","cashmere","angora"
-    };//'random' words
+    };
 
     for (const auto& w : words) {//range based for loop, loops through each string w in the vector
         ht.insert(w, (int)w.size());//parameters going into insert function, w is the string that your at.
@@ -249,3 +249,13 @@ int main() {
     return 0;
 }
 ```
+### Explanation
+I will first go over the results and then do some analysis. 
+#### Test 1: Random words
+Total collisions: 24. Maximum bucket size: 3. Average bucket length: 1.289
+#### Test 2: Sequential keys
+Total collisions: 0. Maximum bucket size: 1. Average bucket lenght: 1
+#### Test 3: Same prefix keys
+Total collisions: 1. Maximum bucket size: 2. Average bucket length: 1.01
+#### Analysis
+The hash table performed best with Sequential and Same prefix keys with a total of 0 and 1 collisions respectively. The Random words test performed not great, but still had a relatively low average bucket length and a maximum bucket size of only 3. This indicates our hashfunction worked well in distributing these pairs, due to polynomial rolling hash. It effectively mixes all characters in the key, which helped put seemingly similar inputs(in the structured cases of sequential and same prefix) into differnt buckets.This shows that our hashtable maintains good performance across sturctured and unstructured input. 
