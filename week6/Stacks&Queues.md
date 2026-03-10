@@ -12,5 +12,5 @@ To prevent underflow we can modify dequeue to check if the queue is empty. If it
 **Response**:
 1. Insert to the front of the queue by first checking for overflow. If theres no overflow move the front pointer 'forward' a slot(to left) and place the new element there.
 2. Insert to the back of the queue by first checking for overflow. If theres no overflow move the back pointer 'back' a slot(to the right) and place the new element there.
-3. Delete from the front by first checking if the deque is empty(underflow). If theres no underflow delte the element and move the front pointer a slot 'back'(to the right).
-4. Delete from the back by first checking if the deque is empty(underflow). If theres no underflow delte the element and move the back pointer a slot 'forward'(to the left).
+3. Delete from the front by first checking if the deque is empty(underflow). If theres no underflow delete the element and move the front pointer a slot 'back'(to the right).
+4. Delete from the back by first checking if the deque is empty(underflow). If theres no underflow delete the element and move the back pointer a slot 'forward'(to the left).
