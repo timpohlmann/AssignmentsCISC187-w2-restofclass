@@ -5,4 +5,4 @@ Stack.cpp: Stack implementation
 main.cpp: test program
 README.md: Explanation of stack implementation
 
-Reflection questions go in the README file, which i will link in here
+## Reflection questions
