@@ -4,7 +4,7 @@ Main.cpp : https://github.com/timpohlmann/AssignmentsCISC187-w2-restofclass/blob
 
 Stack.cpp : https://github.com/timpohlmann/AssignmentsCISC187-w2-restofclass/blob/59bc05bef2a76e548f91cce2c5ff1a613e7df5d7/week7LinkedList/stack.cpp
 
-Stack.h :
+Stack.h : https://github.com/timpohlmann/AssignmentsCISC187-w2-restofclass/blob/32db659615d1341cf74032c4a9217fb44c140b83/week7LinkedList/stack.h
 
 
 ## Reflection questions:
