@@ -9,5 +9,42 @@
 ### Task 4: Write a code in C++ using the same array mentioned in #1 and implement a binary search tree. Only insertion operation is required. 
 ***Response***:
 ```C++
-c++ code
+#include <iostream>
+using namespace std;
+
+struct Node {//struct for the nodes
+    int data;
+    Node* left;
+    Node* right;
+};
+
+Node* newNode(int data) {
+    Node* node = new Node();
+    node->data = data;
+    node->left = nullptr;
+    node->right = nullptr;
+    return node;
+}
+
+Node* insert(Node* node,int data) {
+    if (node==nullptr) {
+        return newNode(data);
+    }
+    if (data<node->data ) {
+        node->left=insert(node->left,data);
+    }
+    else {
+        node->right=insert(node->right,data);
+    }
+    return node;
+}
+
+int main() {
+    int size=9;
+    int array[9]={1,5,9,2,4,10,6,3,8};
+    Node* root =nullptr;
+    for (int i=0;i<size;i++) {
+        root=insert(root,array[i]);
+    }
+}
 ```
