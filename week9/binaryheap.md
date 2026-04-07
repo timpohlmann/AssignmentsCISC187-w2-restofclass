@@ -12,4 +12,5 @@ https://drive.google.com/file/d/1L2NNumwo_zVm492V296z387nY-FBB1lp/view?usp=share
 
 
 ### Task 3:Imagine you’ve built a brand-new heap by inserting the following numbers into the heap in this particular order: 55, 22, 34, 10, 2, 99, 68. If you then pop them from the heap one at a time and insert the numbers into a new array, in what order would the numbers now appear?
-**Response**:
+**Response**: The final array will look like this: [99,22,68,10,2,34,55]
+Here is a visual representation of the Binary Heap tree: https://drive.google.com/file/d/15iJXSWtwMBAU2qoQ7fX2S7YvKHCe1LSy/view?usp=share_link
