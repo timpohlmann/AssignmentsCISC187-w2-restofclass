@@ -8,6 +8,7 @@
 
 ### Task 2: Draw what the previous heap would look like after we delete the root node.
 **Response**: For this question I am assuming you meant to use the Binary Heap before adding the value 11, becuase if you meant removing the root after adding in 11 it would jsut give back the original Binary Heap.
+https://drive.google.com/file/d/1L2NNumwo_zVm492V296z387nY-FBB1lp/view?usp=share_link
 
 
 ### Task 3:Imagine you’ve built a brand-new heap by inserting the following numbers into the heap in this particular order: 55, 22, 34, 10, 2, 99, 68. If you then pop them from the heap one at a time and insert the numbers into a new array, in what order would the numbers now appear?
