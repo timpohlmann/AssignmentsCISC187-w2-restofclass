@@ -109,4 +109,4 @@ int main() {
 ```
 
 ## Task 3: Compare both search algorithms in the context of Big O notations. (2 points)
-**Response**:
+**Response**: Both are O(V+E) (V=vertices and E=edges) since both algorithms visit every vertex and edge once. The space complexity is different, for DFS it is O(H) where H is the maxium depth of the graph. In worst case(a straight line graph) it is O(V).  BFS is O(W) where W is the width of the graph. For the worst case of BFS it is O(V) if it is a very wide graph. 
