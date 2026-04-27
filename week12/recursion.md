@@ -35,7 +35,14 @@ def sum(low, high)
     return high + sum(low, high - 1)
 end
 ```
-**Response**:
+**Response**: 
+'''
+def sum(low, high)
+    return high if low >= high  # base case
+    return high + sum(low, high - 1)
+end
+'''
+This say low is 3 and high is 4, then we get 4 + sum(3,3) which gets to satisfy the base case and finally return 7 with our orignal call of the function
 ## Task 4:
 Here is an array containing both numbers as well as other arrays, which in turn contain numbers and arrays:
 ```
