@@ -36,12 +36,12 @@ def sum(low, high)
 end
 ```
 **Response**: 
-'''
+```
 def sum(low, high)
     return high if low >= high  # base case
     return high + sum(low, high - 1)
 end
-'''
+```
 This say low is 3 and high is 4, then we get 4 + sum(3,3) which gets to satisfy the base case and finally return 7 with our orignal call of the function
 ## Task 4:
 Here is an array containing both numbers as well as other arrays, which in turn contain numbers and arrays:
@@ -67,3 +67,14 @@ array=[ 1,
 ```
 Write a recursive function that prints all the numbers (and just numbers).
 **Response**:
+```
+function printnumbers(array)
+for each element in array
+if element is an array:
+    printnumbers(element)
+    else:
+    print element
+```
+This array is not a valid array in c++, it could be in python but i figured the pseudocode was all that was necessary.
+
+
