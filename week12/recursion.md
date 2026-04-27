@@ -16,7 +16,7 @@ def print_every_other(low, high)
     print_every_other(low + 2, high)
 end
 ```
-**Response**:
+**Response**: The base case in this function is if low>high. Low increases by 2 with every recursion, and high stays the same. 
 ## Task 2: 
 
  My kid was playing with my computer and changed my factorial function so that it computes factorial based on (n - 2) instead of (n - 1). Predict what will happen when we run factorial(10) using this function:
