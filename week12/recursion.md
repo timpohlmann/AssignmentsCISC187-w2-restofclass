@@ -75,6 +75,60 @@ if element is an array:
     else:
     print element
 ```
-This array is not a valid array in c++, it could be in python but i figured the pseudocode was all that was necessary.
+```c++
+#include <iostream>
+#include <variant>
+#include <vector>
+
+// Forward declaration
+struct Element;
+
+using Array = std::vector<Element>;
+
+struct Element {
+    std::variant<int, Array> value;
+};
+
+void printNumbers(const Array& arr) {
+    // Iterate over each element in the current array
+    for (const auto& elem : arr) {
+
+        // Check if element is a plain integer (not a nested array)
+        if (std::holds_alternative<int>(elem.value)) {
+
+            // It's a number  print it
+            std::cout << std::get<int>(elem.value) << "\n";
+
+        } else {
+            // It's a nested array so recurse into it.
+            // printing its numbers and recursing further if it finds more nested arrays.
+            // The recursion unwinds naturally once an array is reached with no further nesting
+            printNumbers(std::get<Array>(elem.value));
+        }
+    }
+    // When the loop ends, we've fully processed this array level.
+    // Control returns to the caller (either main, or a previous recursive call).
+}
+int main() {
+    Array array = {
+        {1}, {2}, {3},
+        {Array{ {4}, {5}, {6} }},
+        {7},
+        {Array{ {8}, {Array{ {9}, {10}, {11}, {Array{ {12}, {13}, {14} }} }} }},
+        {Array{ {15}, {16}, {17}, {18}, {19},
+            {Array{ {20}, {21}, {22},
+                {Array{ {23}, {24}, {25},
+                    {Array{ {26}, {27}, {29} }}
+                }}, {30}, {31}
+            }}, {32}
+        }},
+        {33}
+    };
+
+    printNumbers(array);
+    return 0;
+}
 
 
+
+```
