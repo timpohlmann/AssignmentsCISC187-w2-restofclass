@@ -13,7 +13,7 @@ function wordBuilder(array) {
 }
 ```
 **Response**:
-
+The space complexity for this example is O(n^2) because of the fact that we are pairing the element in an array with every other element in it. 
 ## Task 2: Following is a function that reverses an array. Describe its space complexity in terms of Big O:
 ```
 function reverse(array) { 
