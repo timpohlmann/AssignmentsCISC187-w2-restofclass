@@ -24,10 +24,37 @@ function reverse(array) {
 		return newArray;
 }
 ```
-**Response**:
+**Response**: This case is O(N) because the final array will have the same amount of elements N as the input array.
 
 ## Task 3: Create a new function to reverse an array that takes up just O(1) extra space.
 **Response**: 
+```c++
+#include <iostream>
+using namespace std;
+
+ void reversearray(int arr[], int size) {
+  int left=0;
+     int right=size - 1;
+     while (left < right) {
+         int temp = arr[left];
+         arr[left] = arr[right];
+         arr[right] = temp;
+         right--;
+         left++;
+     }}
+
+
+int main() {
+     int array[5]={5,6,8,2,1,};
+
+     reversearray(array,5);
+     cout<<"Reversed Array"<<endl;
+     for (int i=0;i<5;i++) {
+         cout<<array[i]<<" ";
+
+     }
+ }
+```
 
 ## Task 4: Following are three different implementations of a function that accepts an array of numbers and returns an array containing those numbers multiplied by 2. For example, if the input is [5,4,3,2,1] the output will be [10,8,6,4,2]
 ```
