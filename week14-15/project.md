@@ -133,7 +133,44 @@ You’re writing a function that accepts an array of numbers and computes the hi
 ```
 
 We could use nested loops to multiply every possible pair of numbers, but this would take $O(N^2)$ time. **Your job is to optimize the function so that it’s a speedy $O(N)$.**
-**Response**:
+**Response**: 
+```c++
+#include <iostream>
+
+int highestproduct(int arr[], int size) {
+    int largest =std::max(arr[0], arr[1]);//initializing variables for largest, smallest
+    int secondlargest=std::min(arr[0], arr[1]);
+    int smallest=std::min(arr[0], arr[1]);
+    int secondsmallest=std::max(arr[0], arr[1]);
+
+    for (int i = 2; i < size; i++) {
+        if (arr[i] > largest) {//updating counter for largest, 2nd largest
+            secondlargest =largest;
+            largest=arr[i];
+        }
+        else if (arr[i] > secondlargest) {
+            secondlargest=arr[i];
+        }
+
+        if (arr[i] < smallest) {//updating counter for smallest, 2nd smallest
+            secondsmallest=smallest;
+            smallest=arr[i];
+        }
+        else if (arr[i] < secondsmallest) {
+            secondsmallest=arr[i];
+        }
+    }
+    int max = std::max(largest* secondlargest, smallest* secondsmallest);
+    return max;
+}
+
+int main() {
+    int arr[]={5,-10,-6,9,4};//running the example
+    int size =5;
+    std:: cout<<"The largest product possible in that array was: "<<std::endl;
+    std::cout << highestproduct(arr, size);
+}
+```
 ## Task 5
 
 You’re creating software that analyzes the data of body temperature readings taken from hundreds of human patients. These readings are taken from healthy people and range from 97.0 degrees Fahrenheit to 99.0 degrees Fahrenheit. An important point: within this application, *the decimal point never goes beyond the tenth place.*
