@@ -100,6 +100,30 @@ Now, we could use nested loops to find the profit of every possible buy and sell
 
 **Your job is to optimize the code so that the function clocks in at just $O(N)$.**
 **Response**:
+```c++
+#include <iostream>
+
+int maxprofit(int arr[], int size) {
+    int bestprofit=0;
+    int minsofar=arr[0];//the minimum buying price
+    for (int i=0;i<size;i++){
+        int potentialprofit=arr[i]-minsofar;//evaluates the potential profit which is the sell price(arr[i]-the min buying price)
+        if (potentialprofit>bestprofit) bestprofit=potentialprofit;
+        if (arr[i]<minsofar) {
+            minsofar=arr[i];
+        }
+
+    }
+return bestprofit;
+}
+
+int main() {
+    int arr[] = {10, 7, 5, 8, 11, 2, 6};//testing it with the example
+    int size =7;
+    std::cout <<"The best profit is: "<< std::endl;
+    std::cout << maxprofit(arr, size);
+}
+```
 ## Task 4
 
 You’re writing a function that accepts an array of numbers and computes the highest product of any two numbers in the array. At first glance, this is easy, as we can just find the two greatest numbers and multiply them. However, our array can contain negative numbers and look like this:
