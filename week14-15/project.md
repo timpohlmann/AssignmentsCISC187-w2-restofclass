@@ -55,6 +55,29 @@ Using a nested-loops approach would take up to $O(N^2)$.
 
 **Your job is to optimize the code so that it has a runtime of $
 **Response**:
+```c++
+#include <iostream>
+#include <vector>
+
+int findmissingnumber(std::vector<int>& arr) {
+    int n = arr.size();//because theres a missing number the final number of the array n will be equal to its size
+    int expectedsum= n*(n+1)/2;//summing up all the numbers from 0 to N
+
+    int actualsum=0;
+    for (int num:arr) {//for loop to find the actual sum
+        actualsum += num;
+    }
+return expectedsum-actualsum;
+}
+
+int main() {//testing top make sure it works
+    std::vector<int> arr1={2, 3, 0, 6, 1, 5};
+    std::vector<int> arr2={8, 2, 3, 9, 4, 7, 5, 0, 6};
+
+    std::cout << findmissingnumber(arr1) << std::endl;
+    std::cout << findmissingnumber(arr2) << std::endl;
+}
+```
 ## Task 3
 
 You’re working on some more stock-prediction software. The function you’re writing accepts an array of predicted prices for a particular stock over the course of time.
