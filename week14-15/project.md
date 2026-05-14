@@ -30,7 +30,72 @@ While there are players who share first names and players who share last names, 
 We can use a nested-loops approach, comparing each player from one array against each player from the other array, but this would have a runtime of $O(N * M)$. 
 
 **Your job is to optimize the function so that it can run just $O(N + M)$.**
-**Response**:
+**Response**: 
+```c++
+#include <iostream>
+#include <vector>
+#include <unordered_set>
+#include <string>
+
+struct Player {
+    std::string first_name;//the struct for the player which will help make the vector
+    std::string last_name;
+    std::string team;
+};
+
+std::vector<std::string> find_players_in_both_sports(
+    std::vector<Player> basketball_players, 
+    std::vector<Player> football_players) 
+{
+    // Step 1: O(N) - store basketball players in a hash set
+    std::unordered_set<std::string> basketball_set;
+    for (Player player : basketball_players) {//for loop datatype(struct player) and then giving variable name 'player'
+        std::string full_name = player.first_name + " " + player.last_name;//creating new var
+        basketball_set.insert(full_name);//adding to the set
+    }
+
+    // Step 2: O(M) - check each football player against the set
+    std::vector<std::string> both_sports;//creating a vector for players in both sports
+    for (Player player : football_players) {
+        std::string full_name = player.first_name + " " + player.last_name;
+        if (basketball_set.count(full_name)) {//if its included in the set 
+            both_sports.push_back(full_name);//push this into the vector
+        }
+    }
+
+    return both_sports;
+}
+
+int main() {
+    std::vector<Player> basketball_players = {
+        {"Jill", "Huang", "Gators"},
+        {"Janko", "Barton", "Sharks"},
+        {"Wanda", "Vakulskas", "Sharks"},
+        {"Jill", "Moloney", "Gators"},
+        {"Luuk", "Watkins", "Gators"}
+    };
+
+    std::vector<Player> football_players = {//vector of type player, so it has 3 attributes each
+        {"Hanzla", "Radosti", "32ers"},
+        {"Tina", "Watkins", "Barleycorns"},
+        {"Alex", "Patel", "32ers"},
+        {"Jill", "Huang", "Barleycorns"},
+        {"Wanda", "Vakulskas", "Barleycorns"}
+    };
+
+    std::vector<std::string> result = find_players_in_both_sports(
+        basketball_players, 
+        football_players
+    );
+
+    std::cout << "Players in both sports:" << std::endl;
+    for (std::string name : result) {
+        std::cout << name << std::endl;
+    }
+
+    return 0;
+}
+```
 ## Task 2
 
 You’re writing a function that accepts an array of distinct integers from 0, 1, 2, 3...up to N. However, the array will be missing one integer, and your function is to *return the missing one.*
