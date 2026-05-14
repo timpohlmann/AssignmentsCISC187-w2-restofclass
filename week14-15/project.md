@@ -251,7 +251,48 @@ You are to write a function that sorts these readings from lowest to highest.
 Using a classic sorting algorithm such as Quicksort would take $O(N log N)$. However, in this case, writing a faster sorting algorithm is possible.
 
 Yes, that’s right. Even though you’ve learned that the fastest sorts are $O(N log N)$, this case is different. Why? In this case, there are limited possibilities for the readings. In such a case, we can sort these values in $O(N)$. It may be $N$ multiplied by a constant, but that’s still considered $O(N)$.
-**Response**:
+**Response**: 
+```c++
+#include <iostream>
+#include <vector>
+#include <unordered_map>
+
+std::vector<double> sort_temperatures(std::vector<double> readings) {
+    // Step 1: initialize hashmap with all possible temps as whole numbers
+    std::unordered_map<int, int> counts;
+    for (int i = 970; i <= 990; i++) {
+        counts[i] = 0;
+    }
+
+    // Step 2: O(N) - count each temperature
+    for (double temp : readings) {
+        int key = (int)(temp * 10 + 0.5); // multiply by 10 to avoid float issues, truncate
+        counts[key]++;
+    }
+
+    // Step 3: O(N) - reconstruct sorted array
+    std::vector<double> sorted;
+    for (int i = 970; i <= 990; i++) {
+        for (int j = 0; j < counts[i]; j++) {
+            sorted.push_back(i / 10.0); // divide back by 10 to get original temp
+        }
+    }
+
+    return sorted;
+}
+
+int main() {
+    std::vector<double> readings = {98.6, 98.0, 97.1, 99.0, 98.9, 97.8, 98.5, 98.2, 98.0, 97.1};
+
+    std::vector<double> result = sort_temperatures(readings);//sorting them
+
+    for (double temp : result) {//for each temp in sorted temp, output it
+        std::cout << temp << std::endl;
+    }
+
+    return 0;
+}
+```
 ## Task 6
 
 You’re writing a function that accepts an array of unsorted integers and returns the length of the *longest consecutive sequence* among them. The sequence is formed by integers that increase by 1. For example, in the array:
