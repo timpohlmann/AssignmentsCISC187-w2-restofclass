@@ -313,5 +313,5 @@ This array’s longest sequence is 11-12-13-14-15, so the function would return 
 
 **Your job is to optimize the function so that it takes $O(N)$ time.**
 **Response**:
-
+Maybe use some sort of tree?
 
