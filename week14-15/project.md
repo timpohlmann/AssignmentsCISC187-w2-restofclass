@@ -313,5 +313,40 @@ This array’s longest sequence is 11-12-13-14-15, so the function would return 
 
 **Your job is to optimize the function so that it takes $O(N)$ time.**
 **Response**:
-Maybe use some sort of tree?
+```c++
+#include <unordered_set>
+#include <vector>
+#include <algorithm>
+#include <iostream>
+
+int longestConsecutive(std::vector<int>& arr) {//the unorderd array gets inputted
+    std::unordered_set<int> num_set;
+    for (int x : arr) {
+        num_set.insert(x);
+    }//fill the set with the element of the array
+    int longest = 0;
+
+    for (int x : arr) {
+        if (num_set.find(x - 1) == num_set.end()) {//checking if its start of a sequence
+            int length = 1;//if true length=1
+            while (num_set.find(x + length) != num_set.end()) {//checking if the sequence continues
+                length++;//add to length if next num in sequence is cound
+            }
+            longest = std::max(longest, length);//update longest 
+        }
+    }
+
+    return longest;
+}
+
+int main() {
+    std::vector<int> arr1 = {10, 5, 12, 3, 55, 30, 4, 11, 2};
+    std::vector<int> arr2 = {19, 13, 15, 12, 18, 14, 17, 11};
+
+    std::cout << "Array 1: " << longestConsecutive(arr1) << std::endl; // expected 4
+    std::cout << "Array 2: " << longestConsecutive(arr2) << std::endl; // expected 5
+
+    return 0;
+}
+```
 
